@@ -1,5 +1,5 @@
 'use strict'
-const { Post } = require('../models');
+const { Post, Categorie } = require('../models');
 // Funciones que se utilizaran para ayudar a manejar los datos : POSTS
 
 //ATENCION: Todas las peticiones que se devuelvan con un atributo json { ok: false } 
@@ -19,6 +19,21 @@ module.exports = {
         else{
             // After validation
             return next(post);
+        }
+    },
+
+    validateCat: async (categorie, res, next)=>{
+        let error = {}
+        error.ok = false;
+        let result = await Categorie.findOne({name: categorie.name})
+        if(result){
+            // Ya existe una categoria con este titulo...
+            error.title = 'Ya existe un categoria con este titulo...'
+            res.json(error)
+        }
+        else{
+            // After validation
+            return next(categorie);
         }
     }
 }

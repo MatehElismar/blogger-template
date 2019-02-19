@@ -11,5 +11,7 @@ module.exports = (app)=>{
     app.get('/about', helper.render)
 
     app.use('/posts', require('./posts'))
+
+    app.use('/account', require('./account'))
     
 }

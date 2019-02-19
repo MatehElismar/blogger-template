@@ -5,7 +5,7 @@ const helper = require('../helpers').posts,
 ctrl = {}
 
 ctrl.login = async (req, res)=>{
-
+    res.json(req.body)
 }
 
 ctrl.logout = async (req, res)=>{

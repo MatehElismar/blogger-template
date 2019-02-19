@@ -1,6 +1,8 @@
 'use strict'
 
 module.exports = {
+    account: require('./account'),
+    upload: require('./upload'),
     posts : require('./posts'),
     
     //Static Helpers

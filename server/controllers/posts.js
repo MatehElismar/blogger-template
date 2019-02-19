@@ -1,7 +1,7 @@
 'use strict'
 
 const helper = require('../helpers').posts,
-{ Post } = require('../models'),
+{ Post, Categorie } = require('../models'),
 ctrl = {}
 
 
@@ -45,6 +45,27 @@ ctrl.update = async (req, res)=>{
 ctrl.remove = async (req, res)=>{
     result = await Post.findByIdAndRemove(req.params.postID)
     res.json(result)
+}
+
+ctrl.getCategorie = async (req, res)=>{
+    let categories = await Categorie.find()
+    res.json(categories);
+}
+
+ctrl.addCategorie = async (req, res)=>{
+    helper.validateCat(req.body, res, async (value)=>{
+        const newCat = Categorie({
+            name: value.name,
+            description: value.description,
+            keywords: value.keywords
+        })
+
+        // Saving data
+       let categorie = await newCat.save(); 
+       if(categorie) res.json(categorie)
+       else
+        res.render('error', {msg: 'Something was wrong with the database'})
+    })
 }
 
 
