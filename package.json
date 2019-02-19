@@ -1,0 +1,33 @@
+{
+  "name": "blogger-template",
+  "version": "1.0.0",
+  "description": "Plantilla para sitios web de blogs",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.13",
+    "multer": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatehElismar/express-template.git"
+  },
+  "keywords": [
+    "express",
+    "handlebars",
+    "template"
+  ],
+  "author": "MatehElismar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatehElismar/express-template/issues"
+  },
+  "homepage": "https://github.com/MatehElismar/express-template#readme"
+}
