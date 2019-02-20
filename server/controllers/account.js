@@ -9,7 +9,7 @@ ctrl.login = async (req, res)=>{
 }
 
 ctrl.logout = async (req, res)=>{
-    
+    res.send('logged out')
 }
 
 ctrl.restorePass = async (req, res)=>{

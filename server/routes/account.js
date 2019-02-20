@@ -4,7 +4,7 @@ const { account } = require('../controllers')
 
 router.post('/login', account.login);
 
-router.post('/logout', account.logout);
+router.get('/logout', account.logout);
 
 router.post('/restore', account.restorePass); 
 

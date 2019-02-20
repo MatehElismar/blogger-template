@@ -2,7 +2,7 @@
 const multer = require('multer')
 
 module.exports = multer({
-    dest: 'temp', 
+    dest: 'server/temp', 
     fileFilter : (req, file, cb)=>{ 
 
         //Si el archivo es de tipo imagen permitimos que se guarde
@@ -18,4 +18,4 @@ module.exports = multer({
                 cb(null, false)
             }
     }
-})
+}) 

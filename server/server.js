@@ -27,9 +27,9 @@ app.engine('.hbs',exphbs({
 //routes
 enroute(app);
 
-
+ 
 //Connect to the DB server...
-consts.initializeDB()
+consts.initializeDB() 
 .then(res=>{
     //Run the http server...
     app.listen(app.get('port'), (hostname)=>{
@@ -37,3 +37,4 @@ consts.initializeDB()
     })
 })
 
+ 

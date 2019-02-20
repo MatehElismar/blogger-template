@@ -3,5 +3,5 @@
 module.exports = {
     posts : require('./posts'),
     account: require('./account'),
-    upload: require('./upload')
+    upload: require('./upload'), 
 }

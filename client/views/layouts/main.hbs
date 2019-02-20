@@ -13,12 +13,18 @@
             <a class="logo" href="/">Blogger Name</a>
             <a href="/about">About Me</a>
             <a href="/caterogies">Caterogies</a>
-            <a href="/caterogies">Admin Panel</a> 
+            {{#if logged}}
+                <a href="/admin">Admin Panel</a>
+                <div class="right">
+                    <a class="btn" href="/account/logout">Leave Sesion</a>
+                </div>
+            {{else}}
                 <form class="right" action="/account/login" method="post"> 
                     <input type="email" name="email" id="" placeholder="Email Address">
                     <input type="password" name="pass" id="" placeholder="Password">
                     <input class="btn" type="submit" value="Log in">
                 </form> 
+            {{/if}}
         </nav>
     </header>
 
