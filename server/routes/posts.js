@@ -1,17 +1,20 @@
 'use strict'
 const router = require('express').Router();
 const { posts } = require('../controllers')
+// Helper account
+const account = require('../helpers').account
+const isLogged = account.verifyUserMidleware;
 
 router.get('/', posts.index);
 
-router.post('/', posts.add)
+router.post('/', isLogged, posts.add)
 
-router.put('/', posts.update)
+router.put('/', isLogged, posts.update)
 
-router.delete('/', posts.remove)
+router.delete('/:postID', isLogged, posts.remove)
 
 router.get('/categorie', posts.getCategorie)
 
-router.post('/categorie', posts.addCategorie)
+router.post('/categorie', isLogged, posts.addCategorie)
 
 module.exports = router;

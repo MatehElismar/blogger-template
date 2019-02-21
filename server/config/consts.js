@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 
 module.exports = {
-    url: '',
+    url: 'http://localhost',
     db: {
         uri: 'mongodb://localhost/blogger'
     },
