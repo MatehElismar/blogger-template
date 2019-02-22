@@ -31,7 +31,7 @@ module.exports = {
             iis: 'code',
             _id: userID,
             iat: new Date().getTime(),
-            exp: new Date().setDate(new Date().getMinutes() + 10)//Cada sesion dura 10 minutos...
+            exp: new Date().setDate(new Date().getDate() + 1)
         }, 'blogger-template');
     },
 

@@ -42,7 +42,7 @@ async function login(e){
             ajaxSuccess(res, (value)=>{
                 localStorage.setItem('token', value.token);
                 localStorage.setItem('user', JSON.stringify(value.user));
-                location = 'admin/'+ value.token;
+                location = 'admin/panel/'+ value.token;
             })
             
         },
@@ -51,4 +51,9 @@ async function login(e){
         },
     }) 
     return false;
+}
+
+function logout(){
+    localStorage.clear();
+    location = '/';
 }
